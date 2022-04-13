@@ -1,0 +1,1 @@
+/* Voy a colocar en este archivo js el array de textos que se le van a mostrar al usuario, me parece lo más prolijo para que no desordenar el código donde están las funciones principales de la página */

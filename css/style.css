@@ -1,0 +1,118 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 100%;
+    /* 100% = 16px */
+}
+
+/* Tablet, celular horizontal y Desktop */
+
+@media only screen and (min-width: 600px) {
+
+    html {
+        font-size: 1.2rem;
+    }
+
+}
+
+/* Tipografía */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+/* Estilos Generales */
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.5;
+}
+
+main {
+    background-color: hsla(0, 5%, 91%);
+}
+
+header, footer {
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+    color: #F6F5F5;
+}
+
+.logo {
+    width: 5rem;
+}
+
+.brand-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+/* Estilos de la primera sección */
+
+.first-section {
+    background-color: #D3E0EA;
+    font-size: 1rem;
+    padding-top: 1rem;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+.user-name-input {
+    border-radius: .3rem;
+    border: none;
+    outline: none;
+}
+
+/* Estilos timer */
+.time {
+    margin-top: 1rem;
+    padding: 1.5rem 2rem;
+    border-radius: 1rem;
+    background-color: white;
+    max-width: fit-content;
+}
+
+/* Estilos texto y textarea */
+
+.game-container {
+    background-color: #5f9eb9;
+    padding: 1rem;
+    border-radius: .5rem;
+    margin-top: 2rem;
+}
+
+.text-display {
+    padding-bottom: 1rem;
+    color: #F6F5F5;
+}
+
+.text-input {
+    background-color: #D3E0EA;
+    border: 2px solid #437f98;
+    outline: none;
+    width: 100%;
+    margin: auto;
+    resize: none;
+    padding: .5rem;
+    border-radius: .5rem;
+
+}
+
+.text-input:focus {
+    border-color: black;
+}
+
+/* Estilos area puntaje */
+.score-container {
+    background-color:#5f9eb9;
+    color: #F6F5F5;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    padding-top: 1rem;
+    border-radius: .5rem;
+}
