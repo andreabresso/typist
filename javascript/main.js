@@ -73,6 +73,11 @@ function wordCounter(text) {
     return newWord.length;
 }
 
+/* Creo una función para resetear la text area cuando se recarga la página con el evento onload */
+function reset (){
+    document.getElementById("user-text-input").value = "";
+}
+window.onload = reset;
 
 /* Arriba solo he creado una función que me permite contar las palabras, pero el proyecto terminado va a contener las siguientes funciones:
 1) Una función que carga el texto del array que el usuario tiene que tipear usando un random index.
