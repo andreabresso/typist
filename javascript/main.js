@@ -19,7 +19,7 @@ while (userName == "" || userName.length <= 2) {
 } 
 
 /* Mensaje de bienvenida para el usario si ingresó un nombre de suario válido */
-console.log("¡Bienvenido " + userName + "!");
+userNameDisplayed.innerHTML = userName;
 
 /* Le pedimos al usario que ingrese su edad */
 
