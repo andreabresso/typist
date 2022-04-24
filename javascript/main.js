@@ -21,24 +21,6 @@ while (userName == "" || userName.length <= 2) {
 /* Mensaje de bienvenida para el usario si ingresó un nombre de suario válido */
 userNameDisplayed.innerHTML = userName;
 
-/* Le pedimos al usario que ingrese su edad */
-
-let age = prompt("¿Cuántos años tienes?");
-
-/* Evitamos que el usario no ingrese su edad, ingrese 0, un número negativo o que ingrese un string */
-while (age <= 0 || age.length == 0 || age != parseInt(age)) {
-    age = prompt("Por favor, indica tu edad para continuar.")
-}
-
-/* Corroboramos que el usario tenga la edad requerida para jugar */
-if (age > 0 && age < 18){
-    console.log("¡Lo sentimos! No puedes jugar a este juego.");
-} else if (age > 50){
-    console.log("¡Lo sentimos! Eres demasiado viejo para jugar a este juego.");
-} else {
-    console.log("¡Excelente! Podemos comenzar a jugar");
-}
-
 /* Creo un Array multidimensional que contiene cuatro arrays con 50 palabras cada uno */
 const wordsArray = [
     ["constitución", "jurisprudencia", "prestamista", "posición", "apelación", "tribunal", "juez", "ilegalidad", "material", "consecuencias", "recurso", "procesal", "prejudicialidad", "intimación", "público", "notorio", "manifiestamente", "improcedente", "incpacidad", "perentorio", "plazo", "sucesión", "parentesco", "agenda", "económico", "financiero", "inmobiliario", "practicidad", "recurrente", "contraria", "parámetro", "traslado", "instancia", "caducidad", "particular", "querellante", "penalidad", "preventivo", "remedio", "cautelar", "aseguramiento", "intencionalidad", "tasación", "reposición", "sellado", "casación", "contencioso", "administrativo", "homicidio", "agravante"],
