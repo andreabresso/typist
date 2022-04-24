@@ -1,3 +1,14 @@
+/* Elementos DOM */
+const userNameDisplayed = document.querySelector("#user-name-displayed");
+const currentTextDisplayed = document.querySelector("#text-displayed");
+const timeDisplayed = document.querySelector("#time");
+const message = document.querySelector("#time-up-message");
+const inputText = document.querySelector("#user-text-input");
+const displayWordsPerMinute = document.querySelector("#words-per-minute");
+
+/* Creo una variable global que me va a servir en otras funciones para indicar que el usario está jugando al juego */
+let isPlaying;
+
 /* Le pedimos al usuario que ingrese su nombre */
 let userName = prompt("Escribe tu nombre:");
 
@@ -44,9 +55,6 @@ function loadWords (wordsArray) {
 }
 
 loadWords(wordsArray);
-
-/* Le indico al usuario dónde está el texto que debe tipear para que lo ingrese */
-let inputText = prompt("Escriba el texto que aparece en la consola");
 
 /* Creo una función para contar palabras */
 function wordCounter(text) {
