@@ -32,8 +32,9 @@ const wordsArray = [
 /* Creo una función que elige uno de esos arrays al azar y se lo muestra al usuario utilizando join */
 function loadWords (wordsArray) {
     const ranIndex = Math.floor(Math.random() * wordsArray.length);
+    /* Muestro el texto para que el usuario escirba */
     let wordsShowed = wordsArray[ranIndex];
-    console.log(wordsShowed.join(" "));
+    currentTextDisplayed.innerHTML = wordsShowed.join(" ");
 }
 
 loadWords(wordsArray);
