@@ -39,6 +39,28 @@ function loadWords (wordsArray) {
 
 loadWords(wordsArray);
 
+/* Creo una función que va a contar los 60 segundos que tiene el usuario para tipear las palabras */
+
+let time = 60;
+
+function timer() {
+    /*Primero me aseguro de que el tiempo no se haya terminado y le indico que mientras el tiempo no se haya terminado reste 1 */
+    if (time > 0) {
+        time--;
+    } else if (time === 0){
+        isPlaying = false;
+        /* Mesaje que le aparece al jugador cuando el tiempo se termina */
+        message.innerHTML = "¡Tu tiempo ha terminado!";
+        /* Cuando el tiempo se termina se llama a la función que cuenta las palabras del texto ingresado por el usuario */
+        let numberOfWords = wordCounter(inputText.value);
+        /* Mensaje de la cantidad de palabras */ 
+        displayWordsPerMinute.innerHTML = numberOfWords;
+    }
+    timeDisplayed.innerHTML = time;
+}
+
+setInterval(timer,1000);
+
 /* Creo una función para contar palabras */
 function wordCounter(text) {
     /* Creo una variable para eliminar los caracteres de espacio y puntuación con expresiones regulares */
@@ -51,9 +73,6 @@ function wordCounter(text) {
     return newWord.length;
 }
 
-/* Mesaje de la cantidad de palabras */
-let numberOfWords = wordCounter(inputText);
-console.log(userName + " escribiste " + numberOfWords + " palabras");
 
 /* Arriba solo he creado una función que me permite contar las palabras, pero el proyecto terminado va a contener las siguientes funciones:
 1) Una función que carga el texto del array que el usuario tiene que tipear usando un random index.
