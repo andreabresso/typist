@@ -89,6 +89,7 @@ h1 {
 .text-display {
     padding-bottom: 1rem;
     color: #F6F5F5;
+    text-align: justify;
 }
 
 .text-input {

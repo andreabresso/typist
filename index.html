@@ -37,7 +37,7 @@
                         <input type="text" id="user-name-input" class="user-name-input" name="user-name-input">
                     </div>
                 </form>
-                <p class="py-2 px-2">¡Bienvenido <span id="user-name-displayed">usuario</span>! Cuando estés listo, comienza a tipear y se iniciará el cronómetro.¡Mucha suerte!</p>
+                <p class="py-2 px-2">¡Bienvenido/a <span id="user-name-displayed"></span>! Comienza a tipear y se iniciará el cronómetro.¡Mucha suerte!</p>
             </div>
         </section>
 
@@ -45,13 +45,13 @@
         <section class="container py-2">
             <!-- Tiempo -->
             <div class="time mx-auto">
-                <p>Tiempo restante: <span id="time"><b>60</b>s</span></p>   
+                <p>Tiempo restante: <span><b id="time"></b>s</span></p>   
             </div>
 
             <!-- Texto y textarea -->
             <div class="game-container">
-                <div class="text-display" id="text-displayed">Texto para que el usuario escriba</div>
-                <textarea class="text-input" id="user-text-input" placeholder="Escribe aquí..." cols="30" rows="10" autofocus></textarea>
+                <div class="text-display" id="text-displayed"></div>
+                <textarea class="text-input" id="user-text-input" placeholder="Escribe aquí..." cols="30" rows="7" autofocus></textarea>
             </div>
             
             <!-- Indicador de palabras por minuto y caracteres por minuto -->
