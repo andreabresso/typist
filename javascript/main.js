@@ -55,7 +55,6 @@ loadWords(wordsArray);
 /* Creo una función que va a contar los 60 segundos que tiene el usuario para tipear las palabras */
 
 function initTimer() {
-    
     /*Primero me aseguro de que el tiempo no se haya terminado y le indico que mientras el tiempo no se haya terminado reste 1 */
     if (timeLeft > 0) {
         timeLeft--;
@@ -83,20 +82,33 @@ function initTimer() {
 
         /* Mensaje de la cantidad de errores */
         displayMistakes.innerHTML = incorrectWords;
-        
     }
 }
 
-/* Creo una función para contar palabras */
-function wordCounter(text) {
-    /* Creo una variable para eliminar los caracteres de espacio y puntuación con expresiones regulares */
-    let removeChar = text.replace(/[^A-Za-z]\s+/g, " ");
+/* Creo una función que cuenta las palabras correctas */
+function accuracy (inputText, currentTextDisplayed){
+    /* Primero aplico el método split al texto mostrado al usuario y declaro en cero la variable de conteo */
+    currentTextDisplayed = (currentTextDisplayed.split(" "));
+    let count = 0;
+    /* Luego aplico los métodos trim y split al texto ingresado por el usuario para crear un nuevo array. Después recorro ese array con for each y le aplico una función - anónima - a cada item de ese nuevo array que controla -con IndexOf- si cada uno de los items se encuentra en el texto mostrado y me devuelve su número de índice. Como si el item no se encuentra la función me devuelve -1,cada vez que me devuelva un número mayor a -1 el contador de palabras correctas sube */
+    inputText.trim().split(" ").forEach(function (item) {
+        if(currentTextDisplayed.indexOf(item) > -1)
+        count++;
+    });
+    return count;
+}
 
-    /* Creo una nueva variable para dividir el resultado en un array de palabras */
-    let newWord = removeChar.trim().split(" ");
-
-    /* La función cuenta los componentes del array y los muestra */
-    return newWord.length;
+/* Creo una función que cuenta las palabras incorrectas */
+function inaccuracy (inputText, currentTextDisplayed){
+    /* Primero aplico el método split al texto mostrado al usuario y declaro en cero la variable de conteo */
+    currentTextDisplayed = (currentTextDisplayed.split(" "));
+    let mistakes = 0;
+    /* Luego aplico los métodos trim y split al texto ingresado por el usuario para crear un nuevo array. Después recorro ese array con for each y le aplico una función - anónima - a cada item de ese nuevo array que controla -con IndexOf- si cada uno de los items se encuentra en el texto mostrado y me devuelve su número de índice. Como si el item no se encuentra la función me devuelve -1,cada vez que me devuelva un número mayor a -1 el contador de palabras correctas sube */
+    inputText.trim().split(" ").forEach(function (item) {
+        if(currentTextDisplayed.indexOf(item) == -1)
+        mistakes++;
+    });
+    return mistakes;
 }
 
 /* Creo una función para resetear la text area cuando se recarga la página con el evento onload */
