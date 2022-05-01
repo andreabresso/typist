@@ -111,6 +111,23 @@ function inaccuracy (inputText, currentTextDisplayed){
     return mistakes;
 }
 
+/* Evento que reinicia el juego */
+resetButton.onclick = () => {
+    //Reseteo la textarea
+    document.getElementById("user-text-input").value = "";
+    //Hago que reaparezca el botón de comenzar
+    startButton.style.display = "block";
+    //Hago que desaparezca el mensaje de tiempo terminado
+    message.style.display = "none";
+    //Reseteo los elementos del timer
+    clearInterval(timer);
+    timeLeft = maxTime;
+    timeDisplayed.innerHTML = timeLeft;
+    //Reseteo las palabras y los errores
+    displayWordsPerMinute.innerHTML = 0;
+    displayMistakes.innerHTML = 0;
+}
+
 /* Creo una función para resetear la text area cuando se recarga la página con el evento onload */
 function reset (){
     document.getElementById("user-text-input").value = "";
