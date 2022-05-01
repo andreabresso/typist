@@ -29,24 +29,19 @@
             <div class="row">
                 <h1 class="py-2 px-2 text-center">¿Qué tan rápido puedes tipear?</h1>
             </div>
-            <div class="row py-2 px-2 text-center">
+            <div class="row py-1 px-2 text-center">
                 <p>Tipea el texto dado en un minuto para saber cuántas palabras y caracteres por minuto puedes escribir.</p>
-                <form>
-                    <div class="py-2 px-2">
-                        <label for="user-name">Ingresa tu nombre: </label>
-                        <input type="text" id="user-name-input" class="user-name-input" name="user-name-input">
-                    </div>
-                </form>
-                <p class="py-2 px-2">¡Bienvenido/a <span id="user-name-displayed"></span>! Comienza a tipear y se iniciará el cronómetro.¡Mucha suerte!</p>
+                <p class="py-1 px-2">Haz click en comenzar y se iniciará el cronómetro. ¡Mucha suerte!</p>
             </div>
         </section>
 
         <!-- Sección juego -->
         <section class="container py-2">
             <!-- Tiempo -->
-            <div class="time mx-auto">
-                <p>Tiempo restante: <span><b id="time"></b>s</span></p>
-                <p class="text-center" id="time-up-message"></p>   
+            <div id="timer-container" class="time mx-auto d-flex flex-column jusify-content-around">
+                <p class="text-center"> Tiempo restante: <span><b id="time">60</b>s</span></p>
+                <p class="text-center" id="time-up-message"></p>
+                <button id="start-button" class="start-button">Comenzar</button>   
             </div>
 
             <!-- Texto y textarea -->
@@ -86,7 +81,5 @@
 
     <!-- El script principal -->
     <script src="javascript/main.js" type="module"></script>
-    <!-- El script que va a contener los arrays con los textos para el usuario -->
-    <script src="javascript/texts-displayed.js"></script>
 </body>
 </html>
