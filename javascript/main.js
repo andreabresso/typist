@@ -17,11 +17,28 @@ let timer,
 maxTime = 60,
 timeLeft = maxTime;
 
+/* Evento que inicia el juego */
+startButton.addEventListener("click", init);
+
+/* Iniciar el juego */
+function init(){
+    //Desaparece el botón de comenzar
+    startButton.style.display = "none";
+    //Hacemos que el text area esté enfocado para que el usuario pueda empezar a tipear
+    document.getElementById("user-text-input").focus();
+    //Llamamos a la función que carga el párrafo
+    loadWords(wordsArray);
+    //Llamamos a la función para que comience a correr el tiempo
+    timer = setInterval(initTimer,1000);
+    //Establecemos que el jugador está jugando
+    isPlaying = true;
+} 
+
 /* Creo un Array multidimensional que contiene cuatro arrays con 50 palabras cada uno */
 const wordsArray = [
-    ["constitución", "jurisprudencia", "prestamista", "posición", "apelación", "tribunal", "juez", "ilegalidad", "material", "consecuencias", "recurso", "procesal", "prejudicialidad", "intimación", "público", "notorio", "manifiestamente", "improcedente", "incpacidad", "perentorio", "plazo", "sucesión", "parentesco", "agenda", "económico", "financiero", "inmobiliario", "practicidad", "recurrente", "contraria", "parámetro", "traslado", "instancia", "caducidad", "particular", "querellante", "penalidad", "preventivo", "remedio", "cautelar", "aseguramiento", "intencionalidad", "tasación", "reposición", "sellado", "casación", "contencioso", "administrativo", "homicidio", "agravante"],
+    ["constitución", "jurisprudencia", "prestamista", "posición", "apelación", "tribunal", "juez", "ilegalidad", "material", "consecuencias", "recurso", "procesal", "prejudicialidad", "intimación", "público", "notorio", "manifiestamente", "improcedente", "incapacidad", "perentorio", "plazo", "sucesión", "parentesco", "agenda", "económico", "financiero", "inmobiliario", "practicidad", "recurrente", "contraria", "parámetro", "traslado", "instancia", "caducidad", "particular", "querellante", "penalidad", "preventivo", "remedio", "cautelar", "aseguramiento", "intencionalidad", "tasación", "reposición", "sellado", "casación", "contencioso", "administrativo", "homicidio", "agravante"],
     ["perro", "gato", "delfín", "tortuga", "jirafa", "araña", "oveja", "león", "tigre", "leopardo", "pantera", "mariposa", "cisne", "tero", "tucán", "halcón", "camello", "lobo", "ratón", "ballena", "pez", "escarabajo", "conejo", "vaca", "caballo", "burro", "medusa", "quis", "liebre", "búho", "carancho", "garza", "cotorra", "gorrión", "paloma", "flamenco", "águila", "topo", "iguana", "víbora", "alacrán", "cucaracha", "oso", "zebra", "rinoceronte", "hipopótamo", "sapo", "pato", "gallina", "canario"],
-    ["cuchara", "tenerdor", "cuchillo", "fuente", "olla", "horno", "cocina", "espátula", "batidor", "espumadera", "taza", "cucharón", "bandeja", "tartera", "bowl", "sacacorcho", "abrelatas", "tiernizador", "parrilla", "pincel", "sartén", "tostadora", "microondas", "termo", "cafetara", "pava", "abrelatas", "botella", "tapa", "termómetro", "molde", "pirotin", "colador", "escurridor", "vaso", "copa", "rejilla", "esponja", "repasador", "jarra", "mate", "bombilla", "encendedor", "agarradera", "pinza", "azucarera", "hornalla", "decantador", "calentador", "canasta"],
+    ["cuchara", "tenedor", "cuchillo", "fuente", "olla", "horno", "cocina", "espátula", "batidor", "espumadera", "taza", "cucharón", "bandeja", "tartera", "bowl", "sacacorcho", "abrelatas", "tiernizador", "parrilla", "pincel", "sartén", "tostadora", "microondas", "termo", "cafetara", "pava", "abrelatas", "botella", "tapa", "termómetro", "molde", "pirotin", "colador", "escurridor", "vaso", "copa", "rejilla", "esponja", "repasador", "jarra", "mate", "bombilla", "encendedor", "agarradera", "pinza", "azucarera", "hornalla", "decantador", "calentador", "canasta"],
     ["pan", "lechuga", "queso", "pepino", "tomate", "rúcula", "chocolate", "uva", "manzana", "banana", "ciruela", "café", "acelga", "pizza", "cebolla", "pimiento", "tarta", "sopa", "pasta", "fideos", "puré", "zapallo", "batata", "papa", "huevo", "pollo", "pescado", "sardina", "atún", "magdalena", "galleta", "torta", "merengue", "manteca", "sal", "pimienta", "panqueque", "bondiola", "carré", "milanesa", "jamón", "tortilla", "bizcochuelo", "pera", "naranja", "mandarina", "aceite", "asado", "costilla", "salsa"]
 ]
 
