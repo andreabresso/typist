@@ -100,10 +100,10 @@ function accuracy (inputText, currentTextDisplayed){
 
 /* Creo una función que cuenta las palabras incorrectas */
 function inaccuracy (inputText, currentTextDisplayed){
-    /* Primero aplico el método split al texto mostrado al usuario y declaro en cero la variable de conteo */
+    /* Primero aplico el método split al texto mostrado al usuario y declaro en cero la variable de errores */
     currentTextDisplayed = (currentTextDisplayed.split(" "));
     let mistakes = 0;
-    /* Luego aplico los métodos trim y split al texto ingresado por el usuario para crear un nuevo array. Después recorro ese array con for each y le aplico una función - anónima - a cada item de ese nuevo array que controla -con IndexOf- si cada uno de los items se encuentra en el texto mostrado y me devuelve su número de índice. Como si el item no se encuentra la función me devuelve -1,cada vez que me devuelva un número mayor a -1 el contador de palabras correctas sube */
+    /* Luego aplico los métodos trim y split al texto ingresado por el usuario para crear un nuevo array. Después recorro ese array con for each y le aplico una función - anónima - a cada item de ese nuevo array que controla -con IndexOf- si cada uno de los items se encuentra en el texto mostrado y me devuelve su número de índice. Como si el item no se encuentra la función me devuelve -1, cada vez que me devuelva -1 el contador de errores sube */
     inputText.trim().split(" ").forEach(function (item) {
         if(currentTextDisplayed.indexOf(item) == -1)
         mistakes++;
