@@ -12,17 +12,10 @@ const resetButton = document.querySelector("#restart-button");
 /* Creo una variable global que me va a servir en otras funciones para indicar que el usario está jugando al juego */
 let isPlaying;
 
-/* Le pedimos al usuario que ingrese su nombre */
-let userName = prompt("Escribe tu nombre:");
-
-/* Nos aseguramos de que el usario ingrese al menos tres caracteres */
-while (userName == "" || userName.length <= 2) {
-    console.log("Nombre de usario no válido");
-    userName = prompt("Ingresa al menos tres caracteres");
-} 
-
-/* Mensaje de bienvenida para el usario si ingresó un nombre de suario válido */
-userNameDisplayed.innerHTML = userName;
+/* Creo variables para el timer */
+let timer,
+maxTime = 60,
+timeLeft = maxTime;
 
 /* Creo un Array multidimensional que contiene cuatro arrays con 50 palabras cada uno */
 const wordsArray = [
@@ -44,25 +37,38 @@ loadWords(wordsArray);
 
 /* Creo una función que va a contar los 60 segundos que tiene el usuario para tipear las palabras */
 
-let time = 60;
-
-function timer() {
+function initTimer() {
+    
     /*Primero me aseguro de que el tiempo no se haya terminado y le indico que mientras el tiempo no se haya terminado reste 1 */
-    if (time > 0) {
-        time--;
-    } else if (time === 0){
+    if (timeLeft > 0) {
+        timeLeft--;
+        timeDisplayed.innerHTML = timeLeft;
+    } else {
+
+        clearInterval(timer);
+
         isPlaying = false;
+
         /* Mesaje que le aparece al jugador cuando el tiempo se termina */
         message.innerHTML = "¡Tu tiempo ha terminado!";
-        /* Cuando el tiempo se termina se llama a la función que cuenta las palabras del texto ingresado por el usuario */
-        let numberOfWords = wordCounter(inputText.value);
-        /* Mensaje de la cantidad de palabras */ 
-        displayWordsPerMinute.innerHTML = numberOfWords;
-    }
-    timeDisplayed.innerHTML = time;
-}
 
-setInterval(timer,1000);
+        /* No permito que el usario ingrese más palabras al text area */
+        inputText.setAttribute('disabled',"");
+
+        /* Cuando el tiempo se termina se llama a la función que cuenta las palabras del texto ingresado por el usuario */
+        let correctWords = accuracy(inputText.value, currentTextDisplayed.innerText);
+
+        /* Cuando el tiempo se termina se llama a la función que cuenta las palabras del texto ingresado por el usuario */
+        let incorrectWords = inaccuracy(inputText.value, currentTextDisplayed.innerText);
+    
+        /* Mensaje de la cantidad de palabras */ 
+        displayWordsPerMinute.innerHTML = correctWords;
+
+        /* Mensaje de la cantidad de errores */
+        displayMistakes.innerHTML = incorrectWords;
+        
+    }
+}
 
 /* Creo una función para contar palabras */
 function wordCounter(text) {
