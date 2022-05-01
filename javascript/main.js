@@ -5,6 +5,9 @@ const timeDisplayed = document.querySelector("#time");
 const message = document.querySelector("#time-up-message");
 const inputText = document.querySelector("#user-text-input");
 const displayWordsPerMinute = document.querySelector("#words-per-minute");
+const displayMistakes = document.querySelector("#mistakes");
+const startButton = document.querySelector("#start-button");
+const resetButton = document.querySelector("#restart-button");
 
 /* Creo una variable global que me va a servir en otras funciones para indicar que el usario está jugando al juego */
 let isPlaying;
