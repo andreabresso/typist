@@ -53,8 +53,6 @@ function loadWords (wordsArray) {
     currentTextDisplayed.innerHTML = wordsShowed.join(" ");
 }
 
-loadWords(wordsArray);
-
 /* Creo una función que va a contar los 60 segundos que tiene el usuario para tipear las palabras */
 
 function initTimer() {
@@ -70,6 +68,7 @@ function initTimer() {
 
         /* Mesaje que le aparece al jugador cuando el tiempo se termina */
         message.innerHTML = "¡Tu tiempo ha terminado!";
+        message.style.display = "block";
 
         /* No permito que el usario ingrese más palabras al text area */
         inputText.setAttribute('disabled',"");
@@ -85,6 +84,12 @@ function initTimer() {
 
         /* Mensaje de la cantidad de errores */
         displayMistakes.innerHTML = incorrectWords;
+
+        /* Habilito el username input */
+        userName.removeAttribute('disabled');
+
+        /* Guardo en local storage la cantidad de palabras correctas */
+        localStorage.setItem('mostRecentScore', correctWords);
     }
 }
 
