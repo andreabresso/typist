@@ -8,6 +8,9 @@ const displayWordsPerMinute = document.querySelector("#words-per-minute");
 const displayMistakes = document.querySelector("#mistakes");
 const startButton = document.querySelector("#start-button");
 const resetButton = document.querySelector("#restart-button");
+const saveScoreButton = document.querySelector("#save-score-button");
+const userName = document.querySelector("#username");
+const highScoresList = document.querySelector("#highScoresList");
 
 /* Creo una variable global que me va a servir en otras funciones para indicar que el usario está jugando al juego */
 let isPlaying;
