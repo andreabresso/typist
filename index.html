@@ -41,7 +41,7 @@
             <div id="timer-container" class="time mx-auto d-flex flex-column jusify-content-around">
                 <p class="text-center"> Tiempo restante: <span><b id="time">60</b>s</span></p>
                 <p class="text-center" id="time-up-message"></p>
-                <button id="start-button" class="start-button">Comenzar</button>   
+                <button id="start-button" class="btn">Comenzar</button>   
             </div>
 
             <!-- Texto y textarea -->
@@ -70,9 +70,21 @@
                     </div>
                 </div>
             </div>
-            <!-- Botón para resetear el juego -->
+
+            <!-- Sección para guardar puntaje y resetear el juego -->
             <div class="restart-container d-flex flex-column justify-content-center align-items-center">
-                <button id="restart-button" class="mx-auto restart-button">Volver a intentar</button>
+                <form class="d-flex flex-column justify-content-center align-items-center">
+                    <input type="text" name="username" id="username" class="username" placeholder="Escribe tu nombre" maxlength="8" disabled>
+                    <button type="submit" class="btn" id="save-score-button" disabled>Guardar</button>
+                </form>
+                <button id="restart-button" class="mx-auto btn">Volver a intentar</button>
+            </div>    
+            
+            <!-- Sección puntajes más altos -->
+            <div class="high-scores-container d-flex flex-column justify-content-center align-items-center" id="highScores">
+                <h2 class="">Puntajes más altos</h2>
+                <ul id="highScoresList" class="high-scores-list"></ul>
+
             </div>
         </section>
     </main>
