@@ -134,6 +134,8 @@ resetButton.onclick = () => {
     //Reseteo las palabras y los errores
     displayWordsPerMinute.innerHTML = 0;
     displayMistakes.innerHTML = 0;
+    //Habilito la text area
+    inputText.removeAttribute('disabled');
 }
 
 /* Creo una función para resetear la text area cuando se recarga la página con el evento onload */
