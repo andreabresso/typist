@@ -144,6 +144,52 @@ function reset (){
 }
 window.onload = reset;
 
+/* Código para mostrar el puntaje */
+
+/* Const para los puntajes más altos */
+const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+
+/* Creo una const que va a determinar que en la leader board solo se van a ver los 5 puntajes más altos */
+const maxHighScores = 5;
+
+userName.addEventListener('keyup', () => {
+    //No habilito el botón guardar hasta que el usuario ingrese su nombre
+    saveScoreButton.disabled = !userName.value;
+});
+
+saveScoreButton.onclick = (e) => {
+    e.preventDefault();
+
+    /* Creo una constante que va a recuperar el último puntaje del jugador del local storage */
+    const latestScore = localStorage.getItem('mostRecentScore');
+        console.log(latestScore);
+
+    /* Creo un objeto que va a guardar el puntaje con el nombre ingresado por el usuario */
+    const score = {
+        score: latestScore,
+        name: userName.value
+    }
+    /* Lo guardo en el array de puntajes más altos */
+    highScores.push(score);
+
+    /* Uso sort para comparar los elementos del array para ver cuál es el puntaje más alto */
+    highScores.sort((a,b) => b.score - a.score)
+
+    /* Uso splice para limitar el array de puntajes más altos a los 5 más altos */
+    highScores.splice(5);
+
+    /* Actualizamos el local storage */
+    localStorage.setItem("highScores", JSON.stringify(highScores));
+
+    //Reseteo el input del usuario
+    document.getElementById("username").value = "";
+
+    /* Muestro los puntajes más altos usando map y creando elementos de una unordered list con template literals */
+    highScoresList.innerHTML = highScores.map ( score => {
+        return `<li class="high-score text-center">${score.name} - ${score.score}</li>`;
+    }).join("");
+}
+
 /* Arriba solo he creado una función que me permite contar las palabras, pero el proyecto terminado va a contener las siguientes funciones:
 1) Una función que carga el texto del array que el usuario tiene que tipear usando un random index.
 2) Una función que da inicio al juego cuando el usuario empieza a tipear en el textarea.
