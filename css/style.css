@@ -62,11 +62,6 @@ h1 {
     font-size: 2rem;
 }
 
-.user-name-input {
-    border-radius: .3rem;
-    border: none;
-    outline: none;
-}
 
 /* Estilos timer */
 .time {
@@ -75,13 +70,6 @@ h1 {
     border-radius: 1rem;
     background-color: white;
     max-width: fit-content;
-}
-
-.start-button{
-    border-radius: .5rem;
-    border: none;
-    outline: none;
-    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
 }
 
 /* Estilos texto y textarea */
@@ -125,17 +113,62 @@ h1 {
     border-radius: .5rem;
 }
 
-/* Estilos botón reset */
-.restart-container{
-    margin-top: 1rem;
+/* Estilos user input text */
+.username {
+    font-size: 1.1rem;
+    width: 10rem;
+    margin: .5rem 0;
+}
+
+/* Estilos leaderboard */
+h2 {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    background-color:#5f9eb9;
+    color: #F6F5F5;
+    padding: 1rem;
+    border-radius: .5rem;
+}
+
+.high-scores-container {
+    margin: 1rem 0;
     padding: 1.5rem 2rem;
     border-radius: 1rem;
     background-color: white;
 }
 
-.restart-button{
-    border-radius: .3rem;
-    border: none;
-    outline: none;
-    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+.high-scores-list {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: .5rem;
+}
+
+.high-score {
+    font-size: 1.2rem;
+    padding: 0.5rem 0rem;
+    border-bottom: 0.1rem solid #56a5eb;
+}
+
+.high-score:hover {
+    transform: scale(1.1);
+}
+
+.btn {
+    font-size: 1.1rem;
+    padding: 1rem 0;
+    width: 10rem;
+    text-align: center;
+    border: 0.1rem solid #56a5eb;
+    margin: .5rem 0;
+    text-decoration: none;
+    color: #56a5eb;
+    background-color: white;
+}
+
+.btn:hover {
+    cursor: pointer;
+    color: #56a5eb;
+    box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+    transform: translateY(-0.1rem);
+    transition: transform 150ms;
 }
