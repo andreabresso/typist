@@ -162,7 +162,6 @@ saveScoreButton.onclick = (e) => {
 
     /* Creo una constante que va a recuperar el último puntaje del jugador del local storage */
     const latestScore = localStorage.getItem('mostRecentScore');
-        console.log(latestScore);
 
     /* Creo un objeto que va a guardar el puntaje con el nombre ingresado por el usuario */
     const score = {
@@ -188,6 +187,30 @@ saveScoreButton.onclick = (e) => {
     highScoresList.innerHTML = highScores.map ( score => {
         return `<li class="high-score text-center">${score.name} - ${score.score}</li>`;
     }).join("");
+
+    /* Mensaje que le aparece al jugador con Sweet Alert cuando guardo el puntaje */ 
+    if (latestScore >= 50){
+        swal({
+            title: "¡Wow!",
+            text: "Eres un as del tipeo",
+            icon: "../multimedia/surprised-joey.jpg",
+            button: "Entendido",
+        });
+    } else if (latestScore >= 35){
+        swal({
+            title: "¡Lo lograste!",
+            text: "¡Eres rápido tipeando!",
+            icon: "../multimedia/leo-toast.jpg",
+            button: "Entendido",
+        });
+    } else {
+        swal({
+            title: "¡Buen intento!",
+            text: "Pero debes seguir practicando...",
+            icon: "../multimedia/success-kid-rs.jpg",
+            button: "Entendido",
+        });
+    };
 }
 
 /* Arriba solo he creado una función que me permite contar las palabras, pero el proyecto terminado va a contener las siguientes funciones:
