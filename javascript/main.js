@@ -27,6 +27,8 @@ startButton.addEventListener("click", init);
 function init(){
     //Desaparece el botón de comenzar
     startButton.style.display = "none";
+    //Habilito la text area
+    inputText.removeAttribute('disabled');
     //Hacemos que el text area esté enfocado para que el usuario pueda empezar a tipear
     document.getElementById("user-text-input").focus();
     //Llamamos a la función que carga el párrafo
@@ -134,8 +136,6 @@ resetButton.onclick = () => {
     //Reseteo las palabras y los errores
     displayWordsPerMinute.innerHTML = 0;
     displayMistakes.innerHTML = 0;
-    //Habilito la text area
-    inputText.removeAttribute('disabled');
 }
 
 /* Creo una función para resetear la text area cuando se recarga la página con el evento onload */
