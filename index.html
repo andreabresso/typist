@@ -30,7 +30,7 @@
                 <h1 class="py-2 px-2 text-center">¿Qué tan rápido puedes tipear?</h1>
             </div>
             <div class="row py-1 px-2 text-center">
-                <p>Tipea el texto dado en un minuto para saber cuántas palabras y caracteres por minuto puedes escribir.</p>
+                <p>Tipea el texto dado en un minuto para saber cuántas palabras por minuto puedes escribir.</p>
                 <p class="py-1 px-2">Haz click en comenzar y se iniciará el cronómetro. ¡Mucha suerte!</p>
             </div>
         </section>
@@ -47,23 +47,18 @@
             <!-- Texto y textarea -->
             <div class="game-container">
                 <div class="text-display" id="text-displayed"></div>
-                <textarea class="text-input" id="user-text-input" placeholder="Escribe aquí..." cols="30" rows="7" autofocus></textarea>
+                <textarea class="text-input" id="user-text-input" placeholder="Escribe aquí..." cols="30" rows="7" autofocus disabled></textarea>
             </div>
             
             <!-- Indicador de palabras por minuto y caracteres por minuto -->
             <div class="score-container container">
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-6">
                         <p class="text-center">PPM:
                             <span id="words-per-minute">0</span>
                         </p>
                     </div>
-                    <div class="col-4">
-                        <p class="text-center">CPM:
-                            <span id="char-per-minute">0</span>
-                        </p>
-                    </div>
-                    <div class="col-4">
+                    <div class="col-6">
                         <p class="text-center">Errores:
                             <span id="mistakes">0</span>
                         </p>
@@ -97,5 +92,7 @@
 
     <!-- El script principal -->
     <script src="javascript/main.js" type="module"></script>
+    <!-- El script de SweetAlert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>
