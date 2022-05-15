@@ -72,6 +72,13 @@ h1 {
     max-width: fit-content;
 }
 
+.start-button{
+    border-radius: .5rem;
+    border: none;
+    outline: none;
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+}
+
 /* Estilos texto y textarea */
 
 .game-container {
@@ -120,6 +127,7 @@ h1 {
     margin: .5rem 0;
 }
 
+
 /* Estilos leaderboard */
 h2 {
     font-size: 1.3rem;
@@ -137,7 +145,7 @@ h2 {
     background-color: white;
 }
 
-.high-scores-list {
+.high-scores-list{
     list-style: none;
     padding-left: 0;
     margin-bottom: .5rem;
@@ -149,11 +157,11 @@ h2 {
     border-bottom: 0.1rem solid #56a5eb;
 }
 
-.high-score:hover {
+.high-score:hover{
     transform: scale(1.1);
 }
 
-.btn {
+.btn{
     font-size: 1.1rem;
     padding: 1rem 0;
     width: 10rem;
@@ -171,4 +179,9 @@ h2 {
     box-shadow: 0 0.4rem 1.4rem 0 rgba(86, 185, 235, 0.5);
     transform: translateY(-0.1rem);
     transition: transform 150ms;
+}
+
+/* Modificaciones a estilos de Sweet Alert*/
+.swal-button {
+    background-color: #2C5364 !important;
 }
