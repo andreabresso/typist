@@ -185,3 +185,16 @@ h2 {
 .swal-button {
     background-color: #2C5364 !important;
 }
+
+/* Estilos citas */
+
+.quote-display {
+    color: #F6F5F5;
+    text-align: justify;
+    font-style: italic;
+    font-size: 1.2rem;
+}
+
+.quote-p {
+    color: #F6F5F5;
+}
