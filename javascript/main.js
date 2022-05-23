@@ -214,5 +214,21 @@ saveScoreButton.onclick = (e) => {
             button: "Entendido",
         });
     };
+
+    /* Hago que aparezca la frase motivacional */
+    quoteP.innerHTML = "A continuación te dejamos una frase motivacional para que sigas practicando";
+    quoteP.style.display = "block";
+    renderNewQuote()
 }
 
+/* Utilización de una API para mostrar frases motivacionales */ 
+function getRandomQuote() {
+    return fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => data.content);
+}
+
+async function renderNewQuote(){
+    const quote = await getRandomQuote();
+    quoteDisplayed.innerHTML = quote;
+}
