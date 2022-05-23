@@ -11,6 +11,9 @@ const resetButton = document.querySelector("#restart-button");
 const saveScoreButton = document.querySelector("#save-score-button");
 const userName = document.querySelector("#username");
 const highScoresList = document.querySelector("#highScoresList");
+const apiUrl = "http://api.quotable.io/random";
+const quoteDisplayed = document.querySelector("#quote-displayed");
+const quoteP = document.querySelector("#quote-p");
 
 /* Creo una variable global que me va a servir en otras funciones para indicar que el usario está jugando al juego */
 let isPlaying;
@@ -213,13 +216,3 @@ saveScoreButton.onclick = (e) => {
     };
 }
 
-/* Arriba solo he creado una función que me permite contar las palabras, pero el proyecto terminado va a contener las siguientes funciones:
-1) Una función que carga el texto del array que el usuario tiene que tipear usando un random index.
-2) Una función que da inicio al juego cuando el usuario empieza a tipear en el textarea.
-3) Una función que hace que el tiempo empiece a correr cuando se inicia el juego usando la función setInterval de Javascript.
-4) Una función que muestra un mensaje cuando el tiempo se termina.
-5) Una función que corrobora que el valor del text area ingresado por el usuario sea correcto, es decir, se corresponda con el valor del texto que se muestra.
-6) Esto todavía no es definitivo pero, de ser posible, crearía una función para que el color del texto mostrado vaya cambiando a medida que el usario lo tipea (de un color si el usuario lo escribe bien y de otro si es un error) con la propiedad Element.classList.
-7) Una función que calcule la cantidad de palabras y caracteres tipeados en el tiempo dado. 
-8) Una función que resetea el juego.
-*/
