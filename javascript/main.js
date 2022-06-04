@@ -42,7 +42,7 @@ function init(){
     isPlaying = true;
 } 
 
-/* Creo un Array multidimensional que contiene cuatro arrays con 50 palabras cada uno */
+/* Creo un Array multidimensional que contiene cuatro arrays con palabras */
 const wordsArray = [
     ["constitución", "jurisprudencia", "prestamista", "posición", "apelación", "tribunal", "juez", "ilegalidad", "material", "consecuencias", "recurso", "procesal", "prejudicialidad", "intimación", "público", "notorio", "manifiestamente", "improcedente", "incapacidad", "perentorio", "plazo", "sucesión", "parentesco", "agenda", "económico", "financiero", "inmobiliario", "practicidad", "recurrente", "contraria", "parámetro", "traslado", "instancia", "caducidad", "particular", "querellante", "penalidad", "preventivo", "remedio", "cautelar", "aseguramiento", "intencionalidad", "tasación", "reposición", "sellado", "casación", "contencioso", "administrativo", "homicidio", "agravante", "pleno", "plenario", "patrocinio", "patrocinante", "comparendo", "compareciente"],
     ["perro", "gato", "delfín", "tortuga", "jirafa", "araña", "oveja", "león", "tigre", "leopardo", "pantera", "mariposa", "cisne", "tero", "tucán", "halcón", "camello", "lobo", "ratón", "ballena", "pez", "escarabajo", "conejo", "vaca", "caballo", "burro", "medusa", "quis", "liebre", "búho", "carancho", "garza", "cotorra", "gorrión", "paloma", "flamenco", "águila", "topo", "iguana", "víbora", "alacrán", "cucaracha", "oso", "zebra", "rinoceronte", "hipopótamo", "sapo", "pato", "gallina", "canario", "molusco", "arácnido", "avestruz"],
@@ -78,10 +78,10 @@ function initTimer() {
         /* No permito que el usario ingrese más palabras al text area */
         inputText.setAttribute('disabled',"");
 
-        /* Cuando el tiempo se termina se llama a la función que cuenta las palabras del texto ingresado por el usuario */
+        /* Cuando el tiempo se termina se llama a la función que cuenta las palabras correctas del texto ingresado por el usuario */
         let correctWords = accuracy(inputText.value, currentTextDisplayed.innerText);
 
-        /* Cuando el tiempo se termina se llama a la función que cuenta las palabras del texto ingresado por el usuario */
+        /* Cuando el tiempo se termina se llama a la función que cuenta las palabras incorrectas del texto ingresado por el usuario */
         let incorrectWords = inaccuracy(inputText.value, currentTextDisplayed.innerText);
     
         /* Mensaje de la cantidad de palabras */ 
